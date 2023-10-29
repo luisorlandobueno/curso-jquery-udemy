@@ -1,0 +1,47 @@
+body {
+    font-family: "Microsoft Yahei";
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid black;
+}
+
+#output {
+    width: 332px;
+    height: 80px;
+    border: 2px solid blue;
+    display: flex;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.key {
+    width: 80px;
+    height: 80px;
+    border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.big_key {
+    width: 164px;
+    height: 80px;
+    border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

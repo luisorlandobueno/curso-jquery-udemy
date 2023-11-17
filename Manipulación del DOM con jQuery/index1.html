@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación del DOM con jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .resaltado {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mi Página con jQuery</h2>
+
+    <!-- Contenedor donde se agregarán elementos -->
+    <div id="contenedor">
+        <p>Este es un párrafo existente.</p>
+    </div>
+
+    <script>
+
+        $("#contenedor").append("<p>nuevo parrafo al final</p>");
+
+        $("#contenedor").prepend("<p>nuevo parrafo al principio</p>");
+
+        $("#contenedor p").after("<p>nuevo parrafo despues</p>");
+
+        $("#contenedor p").before("<p>nuevo parrafo antes</p>");
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

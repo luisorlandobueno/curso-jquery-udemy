@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación del DOM con jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .cajaAnimada {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            transition: width 1s, height 1s, background-color 1s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mi Página con jQuery</h2>
+
+    <!-- Elemento para animación -->
+    <div class="cajaAnimada"></div>
+
+    <script>
+
+        $(".cajaAnimada").click(function(){
+
+            $(this).animate({
+
+                width:"200px",
+                height:"200px",
+                backgroundColor:"red"
+
+            },1000);
+
+        });
+
+
+
+
+
+        
+
+
+    </script>
+
+</body>
+
+</html>

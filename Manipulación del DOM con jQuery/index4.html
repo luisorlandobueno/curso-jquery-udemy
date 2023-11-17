@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación del DOM con jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .resaltado {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mi Página con jQuery</h2>
+
+    <!-- Elemento a cambiar -->
+    <p id="elementoEstilo">Este párrafo tendrá su estilo cambiado.</p>
+
+    <script>
+
+       /* $("#elementoEstilo").css({
+
+            "color":"green",
+            "font-weight":"normal"
+
+        });*/
+
+        $("#elementoEstilo").addClass("resaltado");
+
+
+     
+
+
+
+
+    </script>
+
+</body>
+
+</html>

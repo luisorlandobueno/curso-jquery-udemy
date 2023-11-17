@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Más Ejemplos de Selección en jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .par {
+            background-color: #eee;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mi Página con jQuery</h2>
+
+    <!-- Ejemplo de selección por contenido que inicia con ciertos caracteres -->
+    <p>Elemento A</p>
+    <p>Elemento B</p>
+    <p>Elemento C</p>
+
+    <!-- Ejemplo de selección por contenido que termina con ciertos caracteres -->
+    <p class="par">Párrafo 1</p>
+    <p class="par">Párrafo 2</p>
+    <p class="par">Párrafo 3</p>
+
+    <!-- Ejemplo de selección por contenido que contiene ciertos caracteres en cualquier posición -->
+    <p class="par">Este es un párrafo</p>
+    <p class="par">Otro párrafo aquí</p>
+
+    <script>
+
+        $("p:contains('Elemento')").css("font-style", "italic");
+
+        $(".par:contains('3')").css("color", "blue");
+
+        $(".par:contains('Párrafo 1')").css("background-color", "yellow");
+        
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

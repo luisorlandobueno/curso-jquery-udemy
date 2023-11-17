@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Más Ejemplos de Selección en jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mi Página con jQuery</h2>
+
+    <!-- Ejemplo de selección por hijos directos -->
+    <ul id="miLista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+
+    <!-- Ejemplo de selección por atributo que contiene cierto valor -->
+    <div data-color="rojo">Elemento Rojo</div>
+
+    <div data-color="azul">Elemento Azul</div>
+
+    <!-- Ejemplo de selección por filtro :not() -->
+    <p class="oculto">Este párrafo está oculto.</p>
+
+    <p>Este párrafo está visible.</p>
+
+    <script>
+
+        $("#miLista > li").css("border","2px solid black");
+
+        $("div[data-color='rojo']").css("color", "green");
+
+        $("p:not('.oculto')").css("font-weight", "bold");
+
+
+
+
+
+
+       
+
+       
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Más Ejemplos de Selección en jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .enlace-externo {
+            color: red;
+        }
+
+         .resaltado {
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mi Página con jQuery</h2>
+
+    <!-- Ejemplo de selección por pseudo-clases -->
+    <p>Primer Párrafo</p>
+    <p>Segundo Párrafo</p>
+
+    <!-- Ejemplo de selección por contenido -->
+    <div class="contenido">Este es un div.</div>
+
+    <!-- Ejemplo de selección por atributo de inicio -->
+    <a href="https://www.ejemplo.com" target="_blank" id="enlace-externo">Enlace Externo</a>
+
+    <script>
+
+        $("p:first").css("color","blue");
+
+        $("p:last").addClass("resaltado");
+
+        $(".contenido:contains('div')").css("font-style","italic");
+
+
+        $("a[href^='https://']").addClass("enlace-externo")
+    
+
+
+
+
+    </script>
+
+</body>
+
+</html>

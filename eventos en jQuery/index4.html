@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos con jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .caja {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            transition: background-color 0.5s;
+        }
+
+        .caja:hover {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mi Página con jQuery</h2>
+
+    <!-- Elemento para el evento de hover -->
+    <div class="caja"></div>
+
+    <script>
+
+        $(".caja").hover(
+
+            function(){
+
+                alert("el raton esta sobre la caja");
+
+
+            },
+
+              function() {
+
+                        alert("el raton a salido de la caja");
+
+
+                    }
+
+
+        );
+    
+
+
+
+    </script>
+
+</body>
+
+</html>

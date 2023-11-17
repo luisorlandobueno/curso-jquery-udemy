@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos con jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .caja {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            float: left;
+            cursor: pointer;
+        }
+
+        .caja:hover {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mi Página con jQuery</h2>
+
+    <!-- Cajitas div para el evento de clic -->
+    <div class="caja" id="caja1"></div>
+    <div class="caja" id="caja2"></div>
+    <div class="caja" id="caja3"></div>
+
+    <script>
+
+        $(".caja").click(function(){
+
+            var cajaId = $(this).attr("id");
+
+            alert("clickaste en la caja con el ID: " + cajaId);
+
+            $(this).css("background-color" , "lightgreen");
+
+
+
+
+
+        })
+       
+
+
+
+    </script>
+
+</body>
+
+</html>

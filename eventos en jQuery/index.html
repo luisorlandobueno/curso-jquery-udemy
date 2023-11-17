@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos con jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .resaltado {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mi Página con jQuery</h2>
+
+    <!-- Elemento para el evento de clic -->
+    <button id="botonClic">Haz clic aquí</button>
+
+    <script>
+
+        $("#botonClic").click(function(){
+
+                alert("haz echo click");
+
+
+        })
+
+         $("#botonClic").on("click",function(){
+
+            $(this).toggleClass("resaltado");
+
+
+
+
+         })
+
+
+     
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

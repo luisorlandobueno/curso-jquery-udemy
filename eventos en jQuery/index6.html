@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos con jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .caja {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            float: left;
+            cursor: pointer;
+            background-color: lightcoral;
+        }
+
+        .caja:hover {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mi Página con jQuery</h2>
+
+    <!-- Botones para agregar y eliminar cajas -->
+    <button id="agregarCaja">Agregar Caja</button>
+    <button id="eliminarCaja">Eliminar Última Caja</button>
+
+    <!-- Contenedor de cajas -->
+    <div id="contenedorCajas"></div>
+
+    <script>
+
+        function agregarNuevaCaja(){
+
+
+            var nuevaCaja=$("<div>").addClass("caja").text("caja").click(function(){
+
+                    alert("haz hecho click en la caja");
+
+            });
+
+
+            $("#contenedorCajas").append(nuevaCaja);
+
+        }
+
+        $("#agregarCaja").click(function(){
+
+            agregarNuevaCaja();
+
+        })
+
+
+        $("#eliminarCaja").click(function(){
+
+            $("#contenedorCajas .caja:last").remove();
+
+        })
+
+
+
+
+
+        agregarNuevaCaja();
+     
+       
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

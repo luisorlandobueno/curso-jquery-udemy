@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones y Efectos con jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .caja {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mi Página con jQuery</h2>
+
+    <!-- Caja para la animación de cambio de tamaño -->
+    <div class="caja" id="miCaja"></div>
+
+    <script>
+        // Hacer que la caja cambie de tamaño al hacer clic
+        $("#miCaja").click(function () {
+
+
+            $(this).animate({
+
+                width:"1200px",
+                height:"1200px",
+
+
+
+
+            },1000);
+            
+
+
+        });
+    </script>
+
+</body>
+
+</html>

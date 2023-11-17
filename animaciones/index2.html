@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones y Efectos con jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .caja {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: lightcoral;
+        }
+
+        .contenedor {
+            overflow: hidden;
+            height: 120px;
+            /* Altura limitada para ocultar parte del contenido */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mi Página con jQuery</h2>
+
+    <!-- Contenedor con efecto de deslizamiento vertical -->
+    <div class="contenedor">
+        <div class="caja"></div>
+    </div>
+
+    <script>
+
+
+$(".caja").click(function(){
+
+    $(this).slideUp(1000).slideDown(1000);
+
+
+})
+
+
+      
+
+
+    </script>
+
+</body>
+
+</html>

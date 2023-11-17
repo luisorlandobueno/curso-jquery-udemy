@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizarra Estilo Bar con Letras de Neón y Fondo de Ladrillos</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://source.unsplash.com/1920x1080/?brick-wall');
+            /* Fondo de ladrillos desde Unsplash */
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .chalkboard {
+            position: relative;
+            background-color: #000;
+            border: 10px solid #fff;
+            /* Borde blanco para simular el marco de la pizarra */
+            width: 400px;
+            height: 200px;
+            padding: 20px;
+            overflow: hidden;
+            /* Para que las letras no sobresalgan del contenedor */
+        }
+
+        .neon-text {
+            font-size: 24px;
+            color: #fff;
+            /* Color blanco para mayor contraste */
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+            /* Sombra para simular el efecto de neón */
+            white-space: nowrap;
+            /* Evitar que las letras se rompan en varias líneas */
+            display: inline-block;
+            /* Cada letra como un bloque en línea */
+        }
+
+        /* Animación de parpadeo */
+        @keyframes neonAnimation {
+            0% {
+                color: #fff;
+                text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+            }
+
+            100% {
+                color: #fff;
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="chalkboard">
+        <h2 class="neon-text" id="neonText">bares piscos y cervezas</h2>
+    </div>
+
+    <script>
+        // Obtener el elemento de texto de neón
+        const neonText = document.getElementById('neonText');
+
+        // Obtener el texto y dividirlo en caracteres
+        const textContent = neonText.textContent;
+        const letters = textContent.split('');
+
+        // Crear un span para cada letra con una clase única
+        const coloredLetters = letters.map((letter, index) => {
+            const span = document.createElement('span');
+            span.textContent = letter;
+            span.className = `neon-text letter-${index + 1}`;
+            return span;
+        });
+
+        // Reemplazar el contenido del elemento original con los spans coloreados
+        neonText.innerHTML = '';
+        coloredLetters.forEach(span => neonText.appendChild(span));
+
+        // Aplicar la animación de parpadeo a cada letra
+        coloredLetters.forEach((span, index) => {
+            span.style.animation = `neonAnimation 1s infinite alternate ${index * 0.1}s`;
+        });
+    </script>
+
+</body>
+
+</html>

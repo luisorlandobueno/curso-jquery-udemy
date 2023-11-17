@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caja de Colores Discoteca con jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/color/jquery.color-2.2.0.min.js"></script>
+    <style>
+        #cajaDiscoteca {
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Caja de Colores Discoteca</h2>
+
+    <!-- Caja con efecto de discoteca -->
+    <div id="cajaDiscoteca"></div>
+
+    <script>
+
+          function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+
+            function animacionDiscoteca(){
+
+                $("#cajaDiscoteca").animate(
+
+                {backgroundColor: getRandomColor ()},
+                500,
+                function(){
+
+                    animacionDiscoteca();
+
+                }
+
+            )
+
+        }
+
+
+       
+       animacionDiscoteca();
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

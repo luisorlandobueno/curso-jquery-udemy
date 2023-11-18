@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Validación y AJAX</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .error-message {
+            color: #ff0000;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #217dbb;
+        }
+
+        #resultado {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <div id="errorNombre" class="error-message"></div>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email">
+        <div id="errorEmail" class="error-message"></div>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje"></textarea>
+        <div id="errorMensaje" class="error-message"></div>
+
+        <button type="button" id="enviarFormulario">Enviar Formulario</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $("#enviarFormulario").on("click",function(){
+
+                    validarYEnviarFormulario();
+
+            });
+
+        });
+
+
+        function validarYEnviarFormulario(){
+
+            $(".error-message").text("");
+
+            var nombre = $("#nombre").val();
+            var email = $("#email").val();
+            var mensaje = $("#mensaje").val();
+
+            if(nombre === ''){
+
+                $("#errorNombre").text("el nombre es obligatorio");
+                    return;
+
+                }
+
+            if (email === '') {
+
+                $("#errorEmail").text("el email es obligatorio");
+                return;
+
+            }
+
+            if (mensaje === '') {
+
+                $("#errorMensaje").text("el mensaje es obligatorio");
+                return;
+
+            }
+
+            enviarFormulario(nombre,email,mensaje);
+
+
+            
+
+        }
+
+        function enviarFormulario(nombre, email, mensaje){
+
+            $.ajax({
+                url: 'ejemplo_formulario.php',
+                type: 'POST',
+                data:{ nombre:nombre , email:email , mensaje:mensaje },
+                dataType: 'html',
+                success:function(data){
+
+                    $("#resultado").html("respuesta del servidor: " + data);
+
+
+                },
+
+                  error: function (error) {
+                    console.log('Error en la solicitud AJAX:', error);
+                }
+
+            });
+
+
+
+
+
+        }
+
+
+
+    
+
+
+
+    </script>
+
+</body>
+
+</html>

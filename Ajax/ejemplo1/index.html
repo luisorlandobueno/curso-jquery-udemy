@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX con jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="resultado"></div>
+
+        <button id="miBoton">Realizar Solicitud AJAX</button>
+
+
+    <script>
+
+        function realizarSolicitud(){
+
+            $.ajax({
+
+                url: 'ejemplo.php',
+                type:'GET',
+                dataType:'html',
+                success:function(data){
+
+
+                    $("#resultado").html('respuesta del servidor: '+data)
+
+
+                },
+
+                error:function(error){
+
+                    console.log("error en la solicitud" ,error);
+                }
+
+            });
+
+
+        }
+
+
+
+      $("#miBoton").on('click',function(){
+
+        realizarSolicitud();
+
+
+
+      })
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

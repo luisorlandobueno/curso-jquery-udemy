@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX con jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+
+        <!-- Un campo de entrada y un botón -->
+        <input type="text" id="miCampo" placeholder="Introduce un valor">
+        <button id="miBoton">Realizar Solicitud AJAX</button>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        function realizarSolicitudAjax(){
+
+
+            var parametro = $("#miCampo").val();
+
+            $.ajax({
+                url: 'ejemplo.php',
+                type: 'GET',
+                data: { parametro: parametro },
+                dataType: 'html',
+                success:function(data){
+
+                    $("#resultado").html("la rspuesta del servidor: " + data);
+
+
+                },
+
+                  error: function (error) {
+                    console.log('Error en la solicitud AJAX:', error);
+                }
+
+            });
+
+        }
+
+        $("#miBoton").on("click",function(){
+
+            realizarSolicitudAjax();
+
+
+
+        })
+
+
+   
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

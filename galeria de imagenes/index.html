@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes con Filtros</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <div class="filters">
+        <button data-filter="all">Mostrar Todos</button>
+        <button data-filter="nature">Naturaleza</button>
+        <button data-filter="city">Ciudad</button>
+        <button data-filter="people">Personas</button>
+    </div>
+
+    <div class="gallery">
+        <div class="image nature" data-category="nature">
+            <img src="https://www.ecoavant.com/uploads/s1/28/20/69/imagen-de-que-es-la-naturaleza_5_640x307.webp" alt="Nature 1">
+        </div>
+        <div class="image city" data-category="city">
+            <img src="https://concepto.de/wp-content/uploads/2018/08/Londres-e1533855310803.jpg" alt="City 1">
+        </div>
+        <div class="image people" data-category="people">
+            <img src="https://concepto.de/wp-content/uploads/2018/08/persona-e1533759204552.jpg" alt="People 1">
+        </div>
+        <!-- Agrega más imágenes con sus categorías -->
+    </div>
+
+</body>
+
+</html>

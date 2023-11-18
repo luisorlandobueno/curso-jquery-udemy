@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX y JSON</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+
+    <div id="resultado"></div>
+
+    <script>
+
+  $(document).ready(function(){
+
+    $.ajax({
+        url: 'ejemplo_json.php', // Ruta del archivo en el servidor
+        type: 'GET',               // Método de solicitud (puede ser 'GET' o 'POST')
+        dataType: 'json',
+        success:function(data){
+
+
+            mostrarDatos(data);
+        },
+        
+          error: function (error) {
+            // La función error se ejecuta si hay algún problema con la solicitud
+            console.log('Error en la solicitud AJAX:', error);
+        }
+
+    });
+
+  });
+
+
+  function mostrarDatos(data){
+
+    $("#resultado").html("datos del servidor: " + JSON.stringify(data))
+
+
+  }
+      
+
+
+
+
+    </script>
+
+</body>
+
+</html>

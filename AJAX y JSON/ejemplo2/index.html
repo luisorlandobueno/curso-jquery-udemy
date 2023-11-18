@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX y JSON</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad">
+
+        <button type="button" id="enviarDatos">Enviar Datos</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+
+          $(document).ready(function () {
+                $('#enviarDatos').on('click', function () {
+                    enviarDatos();
+                });
+            });
+
+            function enviarDatos(){
+
+                var nombre=$("#nombre").val();
+                var edad = $("#edad").val();
+
+                var datos ={
+
+                    nombre:nombre,
+                    edad:edad
+                };
+
+
+                $.ajax({
+                          url: 'ejemplo_json_recepcion.php',
+                          type: 'POST',
+                          data: JSON.stringify(datos), // Convertir el objeto a JSON antes de enviarlo
+                          contentType: 'application/json', // Establecer el tipo de contenido
+                          dataType: 'json',
+                          success:function(data){
+
+                            mostrarResultado(data);
+
+
+                          },
+
+                           error: function (error) {
+                        console.log('Error en la solicitud AJAX:', error);
+                    }
+
+                })
+
+
+            }
+
+            function mostrarResultado(data){
+
+                $("#resultado").html("respuesta del servidor:" + JSON.stringify(data));
+
+
+
+            }
+
+
+  
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

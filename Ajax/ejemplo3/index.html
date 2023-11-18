@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX con jQuery y Eventos</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        /* Estilo para el borde bonito */
+        .borde-bonito {
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="contenedor">
+        <!-- Aquí se agregarán dinámicamente nuevos elementos -->
+    </div>
+
+    <button id="agregarElemento">Agregar Elemento</button>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $("#agregarElemento").on('click',function(){
+
+                agregarNuevoElemento();
+
+            });
+
+        });
+
+
+        function agregarNuevoElemento(){
+
+            var nuevoElemento = $('<div>').addClass("borde-bonito").text("nuevo elemento " + Math.floor(Math.random() * 1000));
+
+            $("#contenedor").append(nuevoElemento);
+
+            $.ajax({
+                      url: 'ejemplo_evento.php',
+                      type: 'GET',
+                      data: { mensaje: 'Elemento agregado desde AJAX' },
+                      dataType: 'html',
+                      success:function(data){
+
+                        console.log("respuesta del servidor:"  , data);
+
+
+                      },
+
+                    error: function (error) {
+                    console.log('Error en la solicitud AJAX:', error);
+                }
+
+
+
+
+            });
+
+
+
+
+        }
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+    </script>
+
+</body>
+
+</html>

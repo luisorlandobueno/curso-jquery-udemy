@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Incluir jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Incluir jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+
+<div id="mi-barra-de-progreso"></div>
+<button id="iniciar-proceso">Iniciar Proceso</button>
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        // Inicializar el widget progressbar en el div con id "mi-barra-de-progreso"
+        $("#mi-barra-de-progreso").progressbar({
+            value: false, // Porcentaje de progreso inicial (false significa que está indefinido)
+        });
+
+        // Función para simular un proceso y actualizar la barra de progreso
+        function simularProceso() {
+            var progreso = 0;
+            var intervalo = setInterval(function () {
+                progreso += 5;
+                $("#mi-barra-de-progreso").progressbar("value", progreso);
+
+                if (progreso >= 100) {
+                    clearInterval(intervalo);
+                }
+            }, 500);
+        }
+
+        // Vincular la función al clic del botón "Iniciar Proceso"
+        $("#iniciar-proceso").on("click", function () {
+            simularProceso();
+        });
+    });
+</script>
+
+<style>
+    .ui-widget-content {
+        background: #81c784;
+        /* Cambiar el color de fondo a verde */
+        border: 1px solid #4CAF50;
+        /* Cambiar el color del borde a verde oscuro */
+        color: #fff;
+        /* Cambiar el color del texto a blanco */
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

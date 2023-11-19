@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Incluir jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Incluir jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <style>
+        /* Estilo básico para la caja arrastrable */
+        /* Estilo básico para la lista de elementos seleccionables */
+    /* Estilo básico para la lista ordenable */
+.lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para resaltar elementos al arrastrar */
+.ui-sortable-helper {
+    background-color: #81c784;
+    color: #fff;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+<ul id="sortable-lista" class="lista">
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+    <li>Elemento 3</li>
+    <li>Elemento 4</li>
+    <li>Elemento 5</li>
+</ul>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        // Hacer que los elementos de la lista sean ordenables
+        $("#sortable-lista").sortable();
+    });
+</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
